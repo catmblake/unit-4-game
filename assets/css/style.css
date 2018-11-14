@@ -1,0 +1,23 @@
+body {
+    background: url("../images/pexels-photo-255379.jpg");
+}
+header {
+    padding-top: 40px;
+    margin: 20px;
+}
+.container {
+    background: lightcyan;
+    margin: 0 auto;
+}
+.row {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+.crystal {
+    border-radius: 10px;
+    border: 1px solid rgb(154, 228, 228);
+}
+#instructions {
+    margin-bottom: 20px;
+}
