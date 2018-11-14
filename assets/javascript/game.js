@@ -1,7 +1,6 @@
 //trigger random number that is the target for the user to match
 $(document).ready(function () {
-    var targetRandom = Math.floor(Math.random() * 102 + 19)
-    console.log(targetRandom)
+    var targetRandom = getRandomInt(19, 120);
     $('#target-number').html(targetRandom);
 
     //setting up an array of 4 random numbers that will each be assigned to one of the crystals
@@ -13,21 +12,24 @@ $(document).ready(function () {
     $('#win-count').append(wins);
     $('#lose-count').append(losses);
 
-
     //for loop that generates 4 random numbers between 1 and 12, then adds them to the crystalNumbers array
     function randomCrystalNumbers() {
         for (var i = 0; i < 4; i++) {
-            var num = Math.floor(Math.random() * 12 + 1);
+            var num = getRandomInt(1, 12);
             crystalNumbers.push(num);
         }
-        console.log(crystalNumbers)
     }
 
     randomCrystalNumbers();
 
+    //function that generates random numbers within a range
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     //game reset function
     function reset() {
-        targetRandom = Math.floor(Math.random() * 102 + 19);
+        targetRandom = getRandomInt(19, 120);
         console.log(targetRandom)
         $('#target-number').html(targetRandom);
         crystalNumbers = [];
