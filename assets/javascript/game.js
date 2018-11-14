@@ -1,6 +1,6 @@
 //trigger random number that is the target for the user to match
 $(document).ready(function () {
-    var targetRandom = Math.floor(Math.random() * 101 + 19)
+    var targetRandom = Math.floor(Math.random() * 102 + 19)
     console.log(targetRandom)
     $('#target-number').html(targetRandom);
 
@@ -17,7 +17,7 @@ $(document).ready(function () {
     //for loop that generates 4 random numbers between 1 and 12, then adds them to the crystalNumbers array
     function randomCrystalNumbers() {
         for (var i = 0; i < 4; i++) {
-            var num = Math.floor(Math.random() * 11 + 1);
+            var num = Math.floor(Math.random() * 12 + 1);
             crystalNumbers.push(num);
         }
         console.log(crystalNumbers)
@@ -27,7 +27,7 @@ $(document).ready(function () {
 
     //game reset function
     function reset() {
-        targetRandom = Math.floor(Math.random() * 101 + 19);
+        targetRandom = Math.floor(Math.random() * 102 + 19);
         console.log(targetRandom)
         $('#target-number').html(targetRandom);
         crystalNumbers = [];
@@ -55,7 +55,6 @@ $(document).ready(function () {
     //creating on click events for crystals and win lose conditions
     $('#crystal-one').on('click', function () {
         total = total + crystalNumbers[0];
-        console.log("New total= " + total);
         $('#score-count').html(total);
 
         if (total == targetRandom) {
@@ -68,7 +67,6 @@ $(document).ready(function () {
 
     $('#crystal-two').on('click', function () {
         total = total + crystalNumbers[1];
-        console.log("New total= " + total);
         $('#score-count').html(total);
 
         if (total == targetRandom) {
@@ -81,7 +79,6 @@ $(document).ready(function () {
 
     $('#crystal-three').on('click', function () {
         total = total + crystalNumbers[2];
-        console.log("New total= " + total);
         $('#score-count').html(total);
 
         if (total == targetRandom) {
@@ -94,7 +91,6 @@ $(document).ready(function () {
 
     $('#crystal-four').on('click', function () {
         total = total + crystalNumbers[3];
-        console.log("New total= " + total);
         $('#score-count').html(total);
 
         if (total == targetRandom) {
@@ -104,5 +100,4 @@ $(document).ready(function () {
             loseRound();
         }
     })
-
 });	
